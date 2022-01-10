@@ -1,6 +1,7 @@
 import React from 'react';
 import Board from './Board';
 import calculateWinner from './calculateWinner'
+import './Game.css'
 
 class Game extends React.Component {
     constructor(props) {
@@ -20,7 +21,7 @@ class Game extends React.Component {
       if (calculateWinner(squares) || squares[i]) {
         return;
       }
-      squares[i] = this.state.xIsNext ? 'X' : 'Y';
+      squares[i] = this.state.xIsNext ? 'X' : '0';
       this.setState({
         history: history.concat([{
           squares: squares
@@ -50,7 +51,7 @@ class Game extends React.Component {
             />
           </div>
           <div className="game-info">
-            <div>{status}</div>
+            <div className="status">{status}</div>
             <ol>{/* TODO */}</ol>
           </div>
         </div>
